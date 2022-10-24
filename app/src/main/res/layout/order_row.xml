@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            type="int"
+            name="index" />
+        <variable
+            type="com.curtidosbadia.badiapp.model.Order"
+            name="data" />
+        <variable
+            type="com.curtidosbadia.badiapp.viewmodels.OrderViewModel"
+            name="viewModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:onClick="@{() -> viewModel.onClickEditOrder(data)}">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@{data.order_date}"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@{data.order_ref}" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@{data.client_name}" />
+    </LinearLayout>
+</layout>

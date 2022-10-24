@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.curtidosbadia.badiapp.viewmodels.ClientViewModel" />
+    </data>
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                style="@style/form_control"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:inputType="date"
+                android:text="@={viewModel.startDate}" />
+            <EditText
+                style="@style/form_control"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:inputType="date"
+                android:text="@={viewModel.endDate}"/>
+            <Button
+                style="@style/btn_primary"
+                android:text="Search"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="@{() -> viewModel.onClickSearchBetweenDates()}"/>
+        </LinearLayout>
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/piechart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:setPieData="@{viewModel.data}"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Previous"
+                android:onClick="@{() -> viewModel.onClickPrevious()}"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/drawable-v24/form_control_drawable.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/drawable-v24/tab_indicator_selected.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/drawable/tab_selector.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/layout/activity_client.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/layout/activity_login.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/layout/activity_main.xml" value="0.35507246376811596" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/layout/activity_order.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/layout/activity_order_line.xml" value="0.35507246376811596" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/layout/activity_post.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/layout/activity_view_statistics.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/layout/address_row.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/layout/client_row.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/layout/clients_fragment.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/layout/dialog_searcheble_spinner.xml" value="0.35507246376811596" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/layout/event_row.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/layout/events_fragment.xml" value="0.20572916666666666" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/layout/home_fragment.xml" value="0.360054347826087" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/layout/home_fragment_old.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/layout/nav_header.xml" value="0.35507246376811596" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/layout/order_row.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/layout/orderline_row.xml" value="0.35507246376811596" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/layout/orders_fragment.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/layout/post_row.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/layout/posts_fragment.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/layout/related_product_fragment.xml" value="0.16971279373368145" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/menu/main_menu.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/menu/main_menu_client.xml" value="0.20572916666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>

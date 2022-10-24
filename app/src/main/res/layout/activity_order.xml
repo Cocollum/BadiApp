@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.curtidosbadia.badiapp.viewmodels.OrderViewModel" />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:visibility="@{viewModel.order.status.equals(`incorrect`) ? View.VISIBLE : View.GONE}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp"
+                android:layout_marginBottom="25dp"
+                android:background="@color/red">
+                <TextView
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="There was errors on this order" />
+            </LinearLayout>
+            <EditText
+                style="@style/form_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Order Ref."
+                android:editable="false"
+                android:text="@{viewModel.order.order_ref}" />
+            <TextView
+                style="@style/h1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Invoicing Address" />
+            <EditText
+                style="@style/form_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Client name"
+                android:inputType="text"
+                android:text="@={viewModel.order.client.client_name}"
+                android:onClick="@{() -> viewModel.onClickOpenDialog(`client`) }"
+                android:onTextChanged="@{viewModel::onClientNameChanged}"/>
+            <EditText
+                style="@style/form_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Address 1"
+                android:inputType="text"
+                android:text="@={viewModel.order.client.invoice_address.address_address_1}" />
+            <EditText
+                style="@style/form_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Zip code"
+                android:inputType="text"
+                android:text="@={viewModel.order.client.invoice_address.address_zip}" />
+            <EditText
+                style="@style/form_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="City"
+                android:inputType="text"
+                android:text="@={viewModel.order.client.invoice_address.address_city}" />
+            <EditText
+                style="@style/form_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Province"
+                android:inputType="text"
+                android:text="@={viewModel.order.client.invoice_address.address_province}" />
+            <EditText
+                style="@style/form_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Country"
+                android:inputType="text"
+                android:text="@={viewModel.order.client.invoice_address.address_country}" />
+            <EditText
+                style="@style/form_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Vat Number"
+                android:inputType="text"
+                android:text="@={viewModel.order.client.invoice_address.address_vat_number}" />
+            <TextView
+                style="@style/h1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. Shipping address" />
+            <EditText
+                style="@style/form_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Social Reason"
+                android:inputType="text"
+                android:text="@={viewModel.order.client.send_address.address_social_reason}" />
+            <EditText
+                style="@style/form_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Address Name"
+                android:inputType="text"
+                android:text="@={viewModel.order.client.send_address.address_name}" />
+            <EditText
+                style="@style/form_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Address 1"
+                android:inputType="text"
+                android:text="@={viewModel.order.client.send_address.address_address_1}" />
+            <EditText
+                style="@style/form_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Zip Code"
+                android:inputType="text"
+                android:text="@={viewModel.order.client.send_address.address_zip}" />
+            <EditText
+                style="@style/form_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="City"
+                android:inputType="text"
+                android:text="@={viewModel.order.client.send_address.address_city}" />
+            <EditText
+                style="@style/form_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Province"
+                android:inputType="text"
+                android:text="@={viewModel.order.client.send_address.address_province}" />
+            <EditText
+                style="@style/form_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Country"
+                android:inputType="text"
+                android:text="@={viewModel.order.client.send_address.address_country}" />
+            <EditText
+                style="@style/form_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Vat Number"
+                android:inputType="text"
+                android:text="@={viewModel.order.client.send_address.address_vat_number}" />
+            <TextView
+                style="@style/h1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3. System of shipping" />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/dap"
+                    android:onClick="@{() -> viewModel.order.setIncoterm(`dap`)}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="DAP" />
+                <RadioButton
+                    android:id="@+id/exwork"
+                    android:onClick="@{() -> viewModel.order.setIncoterm(`ex_work`)}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="EX WORK" />
+            </RadioGroup>
+            <RadioGroup
+                android:visibility="@{ dap.checked ? View.VISIBLE : View.GONE, default = gone }"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <RadioButton
+                    android:checked="@{viewModel.order.shipping_cost.equals(`air`)}"
+                    android:onClick="@{() -> viewModel.order.setShipping_cost(`air`)}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Invoice cost (by AIR)" />
+                <RadioButton
+                    android:checked="@{viewModel.order.shipping_cost.equals(`truck`)}"
+                    android:onClick="@{() -> viewModel.order.setShipping_cost(`truck`)}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Free ship (by TRUCK)" />
+            </RadioGroup>
+            <EditText
+                style="@style/form_control"
+                android:visibility="@{ exwork.checked ? View.VISIBLE : View.GONE }"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Shipping Forwarder"
+                android:inputType="text"
+                android:text="@={viewModel.order.shipping_forwarder}" />
+            <RadioGroup
+                android:visibility="@{ exwork.checked ? View.VISIBLE : View.GONE }"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/forwardertypeair"
+                    android:onClick="@{() -> viewModel.order.setShipping_forwarder_type(`air`)}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="AIR" />
+                <RadioButton
+                    android:id="@+id/forwardertypetruck"
+                    android:onClick="@{() -> viewModel.order.setShipping_forwarder_type(`truck`)}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TRUCK" />
+            </RadioGroup>
+            <EditText
+                android:visibility="@{ forwardertypeair.checked ? View.VISIBLE : View.GONE }"
+                style="@style/form_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Shipping Account Number"
+                android:inputType="text"
+                android:text="@={viewModel.order.shipping_account_number}" />
+            <TextView
+                style="@style/h1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4. Order" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Articles" />
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:entries="@{viewModel.order.lines}"
+                app:layout="@{@layout/orderline_row}"
+                app:viewModel="@{viewModel}" />
+            <Button
+                style="@style/btn_primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add article"
+                android:onClick="@{() ->  viewModel.onClickAddOrderLineButton() }"/>
+            <EditText
+                style="@style/form_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Date"
+                android:inputType="date"
+                android:focusable="false"
+                android:clickable="true"
+                android:text="@={viewModel.order.order_date}"
+                android:onClick="@{()-> viewModel.onClickDateInput()}"/>
+            <EditText
+                style="@style/form_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Observation"
+                android:inputType="textMultiLine"
+                android:text="@={viewModel.order.observations}" />
+            <EditText
+                style="@style/form_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contact"
+                android:inputType="text"
+                android:text="@={viewModel.order.contact_id}" />
+            <Button
+                style="@style/btn_primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Button"
+                android:onClick="@{() -> viewModel.onClickSaveOrder() }"/>
+        </LinearLayout>
+    </ScrollView>
+</layout>

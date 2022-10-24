@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.curtidosbadia.badiapp.viewmodels.HomeViewModel" />
+        <variable
+            name="data"
+            type="com.curtidosbadia.badiapp.model.RelatedProduct" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:onClick="@{() -> viewModel.onClickPost(data.url)}">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            app:url="@{data.image}" />
+        <TextView
+            style="@style/p"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:text="@{data.title}"/>
+    </LinearLayout>
+</layout>

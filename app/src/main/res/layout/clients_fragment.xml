@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.curtidosbadia.badiapp.viewmodels.ClientViewModel" />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:entries="@{viewModel.client_list}"
+            app:layout="@{@layout/client_row}"
+            app:viewModel="@{viewModel}"
+            />
+    </ScrollView>
+</layout>
