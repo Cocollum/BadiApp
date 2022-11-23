@@ -16,8 +16,10 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:orientation="horizontal"
-        android:clickable="true"
-        android:onClick="@{() -> viewModel.onClickEditOrder(data)}">
+        >
+        <!--android:clickable="true"
+        android:onClick="@{() -> viewModel.onClickEditOrder(data)}"-->
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -277,14 +277,14 @@ public class MainActivity extends AppController implements NavigationView.OnNavi
                 fragment = ClientsContentFragment.newInstance("");
                // ((HomeContentFragment) fragment).viewModel = viewModel;
                 break;
-            case R.id.news:
+            /*case R.id.news:
                 fragment = PostContentFragment.newInstance("");
                 // ((HomeContentFragment) fragment).viewModel = viewModel;
                 break;
             case R.id.events:
                 fragment = EventContentFragment.newInstance("");
                 // ((HomeContentFragment) fragment).viewModel = viewModel;
-                break;
+                break;*/
             default:
                 throw new IllegalArgumentException("Menu option not implemented!");
         }

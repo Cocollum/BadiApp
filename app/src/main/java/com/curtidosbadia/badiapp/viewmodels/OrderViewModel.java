@@ -25,6 +25,8 @@ public class OrderViewModel extends BaseObservable {
     public MutableLiveData<Integer> didClickEditLine = new MutableLiveData<>();
     public MutableLiveData<Integer> didClickDeleteLine = new MutableLiveData<>();
     public MutableLiveData<Boolean> didClickDateInput = new MutableLiveData<>();
+    public MutableLiveData<Integer> didSwipeLeft = new MutableLiveData<>();
+
 
     public OrderViewModel() {
 
@@ -77,6 +79,7 @@ public class OrderViewModel extends BaseObservable {
     public void onClickEditLine(Integer index){  this.didClickEditLine.setValue(index); }
     public void onClickDeleteLine(Integer index){  this.didClickDeleteLine.setValue(index);
     }
+    public void onSwipeLeft(Integer order_id){ this.didSwipeLeft.setValue(order_id);}
 
     public void onClientNameChanged(CharSequence s, int start, int before, int count){
         this.didClientNameChanged.setValue(s.toString());

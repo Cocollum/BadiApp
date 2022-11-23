@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,6 +18,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import androidx.core.view.GestureDetectorCompat;
 import androidx.databinding.DataBindingUtil;
 
 import com.curtidosbadia.badiapp.R;
@@ -45,6 +48,8 @@ public class OrderActivity extends AppController {
     private static final int EDIT_ORDER_LINE_ACTIVITY = 2;
     private OrderViewModel viewModel;
     private Session session;
+    private GestureDetector mDetector;
+    View.OnTouchListener gestureListener;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
@@ -105,6 +110,14 @@ public class OrderActivity extends AppController {
                 }
             });
         }
+
+        //gesture detector -- probar
+        mDetector = new GestureDetector(this, new GestureListener1());
+        gestureListener = new View.OnTouchListener() {
+            public boolean onTouch(View v, MotionEvent event) {
+                return mDetector.onTouchEvent(event);
+            }
+        };
         ActivityOrderBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_order);
 
         binding.setViewModel(viewModel);
@@ -391,4 +404,41 @@ public class OrderActivity extends AppController {
             }
         }
     }
+
+    private final class GestureListener1 extends GestureDetector.SimpleOnGestureListener {
+
+        private static final int SWIPE_THRESHOLD = 80;
+        private static final int SWIPE_VELOCITY_THRESHOLD = 50;
+
+        @Override
+        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+            boolean result = false;
+            try {
+                float diffY = e2.getY() - e1.getY();
+                float diffX = e2.getX() - e1.getX();
+                if (Math.abs(diffX) > Math.abs(diffY)) {
+                    if (Math.abs(diffX) > SWIPE_THRESHOLD && Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
+                        if (diffX <= 0) {
+                            onSwipeLeft();
+                        }
+                        result = true;
+                    }
+                }
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+            return result;
+        }
+    }
+    public void onSwipeLeft() {
+        viewModel.didSwipeLeft.observe( OrderActivity.this, (order_id) -> {
+            if(order_id != null) {
+                Order order = viewModel.getOrder();
+                order.deleteOrderSwipe(order_id);
+                viewModel.setOrder(order);
+            }
+        });
+    }
 }
+
+

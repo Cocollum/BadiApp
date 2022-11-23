@@ -223,4 +223,8 @@ public class Order {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public void deleteOrderSwipe(Integer order_id) {
+        this.getLines().remove(this.getLines().get(order_id));
+    }
 }
