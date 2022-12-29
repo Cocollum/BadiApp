@@ -88,7 +88,6 @@ public class OrderViewModel extends BaseObservable {
     public void onClickOpenDialog(String type) {
         this.didClickOpenDialog.setValue(type);
     }
-    public void onSwipeLeft(Integer order_id){ this.didSwipeLeft.setValue(order_id);}
 
     public void onClickEditLine(Integer index) {
         this.didClickEditLine.setValue(index);
