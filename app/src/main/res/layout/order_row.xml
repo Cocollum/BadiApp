@@ -1,37 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
+
     <data>
+
         <variable
-            type="int"
-            name="index" />
+            name="index"
+            type="int" />
+
         <variable
-            type="com.curtidosbadia.badiapp.model.Order"
-            name="data" />
+            name="data"
+            type="com.curtidosbadia.badiapp.model.Order" />
+
         <variable
-            type="com.curtidosbadia.badiapp.viewmodels.OrderViewModel"
-            name="viewModel" />
+            name="viewModel"
+            type="com.curtidosbadia.badiapp.viewmodels.OrderViewModel" />
     </data>
+
     <LinearLayout
+        android:id="@+id/root_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:orientation="horizontal"
         android:clickable="true"
-        android:onClick="@{() -> viewModel.onClickEditOrder(data)}">
+        android:focusable="true"
+        android:onClick="@{() -> viewModel.onClickEditOrder(data)}"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@{data.order_date}"/>
+            android:text="@{data.order_date}" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@{data.order_ref}" />
+
         <TextView
+            android:id="@+id/tv_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@{data.client_name}" />
     </LinearLayout>
+
 </layout>

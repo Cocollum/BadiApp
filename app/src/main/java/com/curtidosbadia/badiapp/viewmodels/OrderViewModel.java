@@ -1,5 +1,8 @@
 package com.curtidosbadia.badiapp.viewmodels;
 
+import android.view.GestureDetector;
+import android.view.View;
+
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.lifecycle.MutableLiveData;
@@ -25,6 +28,8 @@ public class OrderViewModel extends BaseObservable {
     public MutableLiveData<Integer> didClickEditLine = new MutableLiveData<>();
     public MutableLiveData<Integer> didClickDeleteLine = new MutableLiveData<>();
     public MutableLiveData<Boolean> didClickDateInput = new MutableLiveData<>();
+    public MutableLiveData<Integer> didSwipeLeft = new MutableLiveData<>();
+
 
     public OrderViewModel() {
 
@@ -60,29 +65,49 @@ public class OrderViewModel extends BaseObservable {
         notifyPropertyChanged(BR.orderLine);
     }
 
-    public void onClickAddOrderButton(){ this.didClickAddOrderButton.setValue(true); }
-    public void onClickAddOrderLineButton(){ this.didClickAddOrderLineButton.setValue(true); }
+    public void onClickAddOrderButton() {
+        this.didClickAddOrderButton.setValue(true);
+    }
 
-    public void onAddOrderLine(){
+    public void onClickAddOrderLineButton() {
+        this.didClickAddOrderLineButton.setValue(true);
+    }
+
+    public void onAddOrderLine() {
         this.didAddOrderLine.setValue(true);
     }
 
-    public void onClickSaveOrder(){
+    public void onClickSaveOrder() {
         this.didSaveOrder.setValue(true);
     }
 
-    public void onClickEditOrder(Order order){ this.didClickEditOrder.setValue(order); }
-
-    public void onClickOpenDialog(String type){ this.didClickOpenDialog.setValue(type); }
-    public void onClickEditLine(Integer index){  this.didClickEditLine.setValue(index); }
-    public void onClickDeleteLine(Integer index){  this.didClickDeleteLine.setValue(index);
+    public void onClickEditOrder(Order order) {
+        this.didClickEditOrder.setValue(order);
     }
 
-    public void onClientNameChanged(CharSequence s, int start, int before, int count){
+    public void onClickOpenDialog(String type) {
+        this.didClickOpenDialog.setValue(type);
+    }
+
+    public void onClickEditLine(Integer index) {
+        this.didClickEditLine.setValue(index);
+    }
+
+    public void onClickDeleteLine(Integer index) {
+        this.didClickDeleteLine.setValue(index);
+    }
+
+    public void onClientNameChanged(CharSequence s, int start, int before, int count) {
         this.didClientNameChanged.setValue(s.toString());
     }
 
-    public void onClickDateInput(){
+    public void onSwipeLeft(Integer order_id) {
+        order_list.remove(order_id);
+        notifyPropertyChanged(BR.order_list);
+        didSwipeLeft.setValue(order_id);
+    }
+
+    public void onClickDateInput() {
         this.didClickDateInput.setValue(true);
     }
 }

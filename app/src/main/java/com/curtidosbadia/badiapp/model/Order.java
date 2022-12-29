@@ -39,7 +39,7 @@ public class Order {
         this.shipping_account_number = obj.optString("shipping_account_number");
         this.observations = obj.optString("observations");
         this.contact_id = obj.optString("contact_id");
-        if(obj.opt("lines") != null) {
+        if (obj.opt("lines") != null) {
             JSONArray array = new JSONArray(obj.getString("lines"));
             this.lines = new ArrayList<>();
             for (int i = 0; i < array.length(); i++) {
@@ -68,8 +68,8 @@ public class Order {
         this.status = "";
     }
 
-    public String toJSON(){
-        try{
+    public String toJSON() {
+        try {
             JSONObject obj = new JSONObject();
             obj.put("order_id", this.order_id);
             obj.put("order_ref", this.order_ref);
@@ -84,7 +84,7 @@ public class Order {
 
             JSONArray arr = new JSONArray();
 
-            for(int i = 0; i < this.lines.size(); i++){
+            for (int i = 0; i < this.lines.size(); i++) {
                 arr.put(this.lines.get(i).toJSON());
             }
             obj.put("lines", arr.toString());
@@ -93,7 +93,7 @@ public class Order {
             obj.put("status", this.status);
 
             return obj.toString();
-        }catch(JSONException exc){
+        } catch (JSONException exc) {
             exc.printStackTrace();
         }
         return "";
@@ -203,16 +203,19 @@ public class Order {
         this.lines = lines;
     }
 
-    public void addOrderLine(OrderLine line){
+    public void addOrderLine(OrderLine line) {
         this.lines.add(line);
     }
-    public OrderLine getOrderLine(Integer index){
+
+    public OrderLine getOrderLine(Integer index) {
         return this.lines.get(index);
     }
-    public void editOrderLine(Integer index, OrderLine line){
+
+    public void editOrderLine(Integer index, OrderLine line) {
         this.getLines().set(index, line);
     }
-    public void deleteOrderLine(Integer index){
+
+    public void deleteOrderLine(Integer index) {
         this.getLines().remove(this.getLines().get(index));
     }
 

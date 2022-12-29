@@ -112,7 +112,7 @@ public class HomeContentFragment extends Fragment {
             }
         });
 
-        viewModel.didClickPost.observe(getActivity(), value -> {
+        /*viewModel.didClickPost.observe(getActivity(), value -> {
             if(value != null){
                 Intent intent = new Intent(getContext(), PostActivity.class);
                 intent.putExtra("post", value.toJSON());
@@ -135,7 +135,7 @@ public class HomeContentFragment extends Fragment {
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.home_content, fragment).commit();
             }
-        });
+        });*/
 
         return layout;
     }

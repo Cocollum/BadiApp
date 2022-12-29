@@ -32,7 +32,7 @@ import com.curtidosbadia.badiapp.viewmodels.HomeViewModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
-import com.curtidosbadia.badiapp.BuildConfig;
+//import com.curtidosbadia.badiapp.BuildConfig;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -196,7 +196,7 @@ public class MainActivity extends AppController implements NavigationView.OnNavi
             menuItem.setChecked(true);
 
             TextView version = (TextView) navigationView.findViewById(R.id.version_text);
-            version.setText("Version: " + BuildConfig.VERSION_NAME);
+            //version.setText("Version: " + BuildConfig.VERSION_NAME);
 
             View header = navigationView.getHeaderView(0);
             if(header != null && header.findViewById(R.id.header_title) != null) {
@@ -277,14 +277,14 @@ public class MainActivity extends AppController implements NavigationView.OnNavi
                 fragment = ClientsContentFragment.newInstance("");
                // ((HomeContentFragment) fragment).viewModel = viewModel;
                 break;
-            case R.id.news:
+            /*case R.id.news:
                 fragment = PostContentFragment.newInstance("");
                 // ((HomeContentFragment) fragment).viewModel = viewModel;
                 break;
             case R.id.events:
                 fragment = EventContentFragment.newInstance("");
                 // ((HomeContentFragment) fragment).viewModel = viewModel;
-                break;
+                break;*/
             default:
                 throw new IllegalArgumentException("Menu option not implemented!");
         }

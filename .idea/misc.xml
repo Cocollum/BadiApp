@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Trabajo/BadiApp/app/src/main/res/layout/activity_client.xml" value="0.25" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Trabajo/BadiApp/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Trabajo/BadiApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Trabajo/BadiApp/app/src/main/res/layout/activity_order.xml" value="0.25" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Trabajo/BadiApp/app/src/main/res/layout/order_row.xml" value="0.25" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/Trabajo/BadiApp/app/src/main/res/layout/orderline_row.xml" value="0.25" />
         <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/drawable-v24/form_control_drawable.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/drawable-v24/tab_indicator_selected.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/lupin/Dropbox/Projects/Cocollum/AndroidWorkspace/BadiaApp/app/src/main/res/drawable/tab_selector.xml" value="0.22135416666666666" />
