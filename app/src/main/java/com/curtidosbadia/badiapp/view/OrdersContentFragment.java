@@ -11,11 +11,15 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.curtidosbadia.badiapp.R;
@@ -87,13 +91,14 @@ public class OrdersContentFragment extends Fragment {
         });
 
         GestureDetector gestureDetector = new GestureDetector(getContext(), new MyGestureListener());
-
-        layout.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                return gestureDetector.onTouchEvent(event);
-            }
-        });
+        /*if((RecyclerView) findViewById(R.id.recycle_view)!= null) {
+            ((RecyclerView) findViewById(R.id.recycle_view)).setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    return gestureDetector.onTouchEvent(event);
+                }
+            });
+        }*/
         return layout;
     }
 
@@ -179,13 +184,13 @@ public class OrdersContentFragment extends Fragment {
     }
 
     public void onSwipeRight() {
+
     }
 
     public void onSwipeLeft() {
         viewModel.didSwipeLeft.observe(getViewLifecycleOwner(), index -> {
             if (index != null) {
-                Order order = viewModel.getOrder_list().get(index);
-                order.deleteOrderLine(index);
+                viewModel.onSwipeLeft(index);
             }
         });
     }

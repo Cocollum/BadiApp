@@ -16,12 +16,16 @@
             type="com.curtidosbadia.badiapp.viewmodels.OrderViewModel" />
     </data>
 
-    <LinearLayout
-        android:id="@+id/root_layout"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
+        android:layout_height="match_parent"
+        bind:bgColorSwipeLeft="@{@color/app_green}"
+        bind:bgColorSwipeRight="@{@color/app_red}"
+        bind:drawableSwipeLeft="@{@drawable/ic_check_white_24dp}"
+        bind:drawableSwipeRight="@{@drawable/ic_close_white_24dp}"
+        bind:onItemSwipeLeft="@{() -> viewModel.onSwipeLeft}"
+        bind:swipeEnabled="@{true}"
         android:onClick="@{() -> viewModel.onClickEditOrder(data)}"
         android:orientation="horizontal"
         android:padding="10dp">
@@ -44,6 +48,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@{data.client_name}" />
-    </LinearLayout>
+    </androidx.recyclerview.widget.RecyclerView>
 
 </layout>

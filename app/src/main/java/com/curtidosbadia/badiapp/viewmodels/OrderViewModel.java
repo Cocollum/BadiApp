@@ -6,14 +6,16 @@ import android.view.View;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.lifecycle.MutableLiveData;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.curtidosbadia.badiapp.BR;
 import com.curtidosbadia.badiapp.model.Order;
 import com.curtidosbadia.badiapp.model.OrderLine;
+import com.curtidosbadia.badiapp.utils.OrderRowAdapter;
 
 import java.util.ArrayList;
 
-public class OrderViewModel extends BaseObservable {
+public class OrderViewModel extends BaseObservable implements OrderRowAdapter.SwipeItemTouchHelperCallback.onItemSwipeLeft{
     private ArrayList<Order> order_list = new ArrayList<Order>();
     private Order order;
     private OrderLine orderLine;
@@ -101,11 +103,13 @@ public class OrderViewModel extends BaseObservable {
         this.didClientNameChanged.setValue(s.toString());
     }
 
-    public void onSwipeLeft(Integer order_id) {
-        order_list.remove(order_id);
-        notifyPropertyChanged(BR.order_list);
-        didSwipeLeft.setValue(order_id);
-    }
+        @Override
+        public void onSwipeLeft(int order_id) {
+            order_list.remove(order_id);
+            notifyPropertyChanged(BR.order_list);
+            didSwipeLeft.setValue(order_id);
+        }
+
 
     public void onClickDateInput() {
         this.didClickDateInput.setValue(true);
